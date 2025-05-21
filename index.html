@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브레인스토밍 애플리케이션</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>브레인스토밍 애플리케이션</h1>
+            <div class="user-info">
+                <label for="nickname">닉네임: </label>
+                <input type="text" id="nickname" autocomplete="off">
+                <button id="changeNickname">닉네임 변경</button>
+                <div id="randomNicknameOptions" class="nickname-options" style="display: none;"></div>
+                <div id="adminControls" class="admin-controls" style="display: none;">
+                    <button id="publishButton" class="admin-button">공지</button>
+                    <button id="saveDataButton" class="admin-button">내용 저장</button>
+                    <button id="resetButton" class="admin-button">초기화</button>
+                    <button id="startInputButton" class="admin-button">입력시작</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="problem-section">
+                <div class="team-name-container">
+                    <h2>팀명: </h2>
+                    <div id="teamName" contenteditable="false">아직 설정되지 않음</div>
+                </div>
+                
+                <div class="problem-container">
+                    <h2>문제: </h2>
+                    <div id="problem" contenteditable="false">아직 설정되지 않음</div>
+                </div>
+            </section>
+
+            <section class="ideas-section">
+                <h2>해결 아이디어</h2>
+                <div class="timer-container" id="timerContainer">
+                    남은 시간: <span id="timer">5:00</span>
+                </div>
+                <div id="ideasBoard" class="ideas-board"></div>
+            </section>
+
+            <section class="chat-section">
+                <h2>채팅:</h2>
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="아이디어를 입력하세요...">
+                    <button id="sendButton">작성</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+.timer-container {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.timer-active {
+    color: #4CAF50;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.timer-warning {
+    color: #FFC107;
+}
+
+.timer-danger {
+    color: #F44336;
+}
+
+.timer-ended {
+    color: #F44336;
+    font-weight: bold;
+}
+
+/* 다양한 포스트잇 색상 */
+.idea-note.color-yellow {
+    background-color: #ffda79;
+}
+
+.idea-note.color-pink {
+    background-color: #ffb6c1;
+}
+
+.idea-note.color-green {
+    background-color: #aed581;
+}
+
+.idea-note.color-blue {
+    background-color: #81d4fa;
+}
+
+.idea-note.color-purple {
+    background-color: #ce93d8;
+}
+
+.idea-note.color-orange {
+    background-color: #ffab91;
+}
+
+.idea-note.color-teal {
+    background-color: #80cbc4;
+}.nickname-options {
+    position: absolute;
+    width: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    z-index: 10;
+}
+
+.dark-mode .nickname-options {
+    background-color: #333;
+    border-color: #555;
+}
+
+.nickname-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nickname-option:hover {
+    background-color: #f0f0f0;
+}
+
+.dark-mode .nickname-option:hover {
+    background-color: #444;
+}* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"], button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    height: calc(100vh - 120px);
+}
+
+.problem-section {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .problem-section {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-name-container, .problem-container {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+[contenteditable="true"] {
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+.dark-mode [contenteditable="true"] {
+    background-color: #444;
+    border-color: #555;
+    color: #000; /* 관리자 모드에서 텍스트 색상 검은색으로 변경 */
+    font-weight: bold; /* 가독성을 위해 글자 굵게 설정 */
+}
+
+.ideas-section {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    background-color: #3a4b53;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.ideas-board {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #2c3a40;
+    border-radius: 6px;
+    overflow-y: auto;
+    flex-grow: 1;
+    align-content: flex-start;
+}
+
+.idea-note {
+    width: calc(25% - 15px); /* 한 줄에 4개 포스트잇 표시 */
+    min-height: 120px;
+    padding: 15px;
+    background-color: #ffda79;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    animation: pop-in 0.3s ease-out;
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.idea-author {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    text-align: right;
+    font-style: italic;
+}
+
+.chat-section {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode .chat-section {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.chat-section h2 {
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.chat-messages {
+    display: none; /* 과거 채팅 메시지 숨김 */
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.chat-input input {
+    flex-grow: 1;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    max-width: 80%;
+    word-break: break-word;
+}
+
+.message .author {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.message-content {
+    background-color: #e0f7fa;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.dark-mode .message-content {
+    background-color: #1e3a40;
+}
+
+.admin-controls {
+    margin-left: 10px;
+}
+
+.admin-button {
+    background-color: #ff5722;
+    margin-left: 5px;
+}
+
+.admin-button:hover {
+    background-color: #e64a19;
+}
+
+.admin-button#resetButton {
+    background-color: #f44336;
+}
+
+.admin-button#resetButton:hover {
+    background-color: #d32f2f;
+}
+
+.admin-button#startInputButton {
+    background-color: #4CAF50;
+}
+
+.admin-button#startInputButton:hover {
+    background-color: #388E3C;
+}
+
+.admin-button#startInputButton.disabled {
+    background-color: #aaaaaa;
+    cursor: not-allowed;
+}
+
+.admin-button#startInputButton.active {
+    background-color: #ff9800;
+}
+
+.dark-mode .admin-button {
+    background-color: #ff7043;
+}
+
+.dark-mode .admin-button:hover {
+    background-color: #ff8a65;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background-color: rgba(0, 150, 136, 0.9);
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.publish-banner {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.dark-mode .publish-banner {
+    background-color: #388E3C;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    .ideas-section, .chat-section {
+        grid-column: 1 / -1;
+    }
+    
+    .idea-note {
+        width: calc(50% - 10px);
+    }
+}
